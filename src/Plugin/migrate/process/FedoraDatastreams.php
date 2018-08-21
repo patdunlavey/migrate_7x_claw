@@ -13,14 +13,14 @@ use GuzzleHttp\Client;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Class FedoraDatastream
+ * Class FedoraDatastreams
  *
  * @MigrateProcessPlugin(
  *   id = "fedora_datastream"
  * )
  * @package Drupal\migrate_7x_claw\Plugin\process
  */
-class FedoraDatastream extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+class FedoraDatastreams extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * The Guzzle HTTP Client service.
