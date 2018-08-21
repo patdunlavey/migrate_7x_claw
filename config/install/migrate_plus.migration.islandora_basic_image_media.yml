@@ -10,9 +10,9 @@ migration_dependencies:
 source:
   plugin: islandora
   # Base url of your Solr instance
-  solr_base_url: http://10.0.2.2:9080/solr
+  solr_base_url: http://compass-fedora-newdev.fivecolleges.edu:8080/solr/collection1
   # Base url of your Fedora 3 instance
-  fedora_base_url: &fedora_base_url http://10.0.2.2:9080/fedora
+  fedora_base_url: &fedora_base_url https://compass-fedora-newdev.fivecolleges.edu:8443/fedora
 
   # define a http data fetcher to access the remote sites
   data_fetcher_plugin: http
@@ -20,7 +20,7 @@ source:
   authentication: &fedora_auth
     plugin: basic
     username: fedoraAdmin
-    password: fedoraAdmin
+    password: 7Z82RvXe9K488Z4Mkrbwb9vofr
 
   # We search Solr for PIDs, this is your Solr field for content models
   content_model_field: RELS_EXT_hasModel_uri_ms

@@ -66,7 +66,7 @@ source:
     -
       name: dsids
       label: Datastream IDs
-      selector: 'foxml:datastream[@CONTROL_GROUP = "M"]/foxml:datastreamVersion[position() = last()]/../@ID'
+      selector: 'foxml:datastream[@CONTROL_GROUP = "M"]/foxml:datastreamVersion[position() = last()]/@ID'
 
   ids:
     PID:
@@ -142,6 +142,13 @@ process:
       settings:
         fedora_base_url: *fedora_base_url
         authentication: *fedora_auth
+
+  # Get Datastream IDs.
+  field_dsids:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: dsids
 
   # Give this the Image tag.
   field_tags:

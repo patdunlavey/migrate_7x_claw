@@ -259,4 +259,9 @@ class Islandora extends SourcePluginExtension {
     $params['sort'] = 'PID+asc';
     return $this->solrBase . "/select?" . build_query($params, FALSE);
   }
+
+  public function prepareRow(\Drupal\migrate\Row $row) {
+    parent::prepareRow($row);
+//    dpm($row);
+  }
 }

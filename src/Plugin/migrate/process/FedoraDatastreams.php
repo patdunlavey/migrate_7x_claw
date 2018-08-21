@@ -13,14 +13,14 @@ use GuzzleHttp\Client;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Class FedoraDatastreams
+ * Class FedoraDatastream
  *
  * @MigrateProcessPlugin(
- *   id = "fedora_datastreams"
+ *   id = "fedora_datastream"
  * )
  * @package Drupal\migrate_7x_claw\Plugin\process
  */
-class FedoraDatastreams extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+class FedoraDatastream extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * The Guzzle HTTP Client service.
@@ -61,7 +61,7 @@ class FedoraDatastreams extends ProcessPluginBase implements ContainerFactoryPlu
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->httpClient = $http_client;
     if (!isset($configuration['settings']['fedora_base_url'])) {
-      throw new MigrateException("The fedora_datastreams plugin requires a settings: key with a fedora_base_url key of your Fedora Base URI.");
+      throw new MigrateException("The fedora_datastream plugin requires a settings: key with a fedora_base_url key of your Fedora Base URI.");
     }
     $this->fedoraUri = $configuration['settings']['fedora_base_url'];
     if (isset($configuration['settings']['authentication'])) {
